@@ -33,7 +33,7 @@ class AboutControlStatements(Koan):
         while i <= 10:
             result = result * i
             i += 1
-        self.assertEqual(3_628_800, result)
+        self.assertEqual(3628800, result)
 
     def test_break_statement(self):
         i = 1
@@ -42,7 +42,7 @@ class AboutControlStatements(Koan):
             if i > 10: break
             result = result * i
             i += 1
-        self.assertEqual(3_628_800, result)
+        self.assertEqual(3628800, result)
 
     def test_continue_statement(self):
         i = 0
@@ -58,7 +58,7 @@ class AboutControlStatements(Koan):
         result = []
         for item in phrase:
             result.append(item.upper())
-        self.assertEqual([__, __, __], result)
+        self.assertEqual(['FISH', 'AND', 'CHIPS'], result)
 
     def test_for_statement_with_tuples(self):
         round_table = [
@@ -71,7 +71,8 @@ class AboutControlStatements(Koan):
         for knight, answer in round_table:
             result.append("Contestant: '" + knight + "'   Answer: '" + answer + "'")
 
-        text = __
+        text = "Contestant: 'Robin'   Answer: 'Blue! I mean Green!'"
+
 
         self.assertRegex(result[2], text)
 
