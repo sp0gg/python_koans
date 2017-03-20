@@ -18,7 +18,15 @@
 #
 def triangle(a, b, c):
     angles = (a, b, c)
-    return 'equilateral' if
+    if [a for a in angles if a <= 0]:
+        raise TriangleError('All sides must be greater than 0.')
+    if a + b < c or a + c < b or b + c < a:
+        raise TriangleError('No two sides may be smaller than the third side.')
+    if a is b and a is c:
+        return 'equilateral'
+    if a is b or a is c or b is c:
+        return 'isosceles'
+    return 'scalene'
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
     pass
