@@ -36,30 +36,28 @@ from operator import add
 # Your goal is to write the score method.
 Dice_single_values = {1: 100, 2: 0, 3: 0, 4: 0, 5: 50, 6: 0}
 Dice_triple_values = {1: 1000, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600}
+
+
 def score(dice):
     # You need to write this method
     score = 0
 
-    string = 'count for %s is %s' % (dice, __count_dice(dice))
-    print(string)
-    dice_to_eval = dice
-    triplet = __count_dice(dice_to_eval)
+    counts = {dice.count(d): d for d in dice}
+    print(counts)
+    triple = [d for d in counts if d <= 3]
+    print(triple)
 
-    if triplet:
-        dice_to_eval = [d for d in dice_to_eval if d is not triplet]
-        score += Dice_triple_values[triplet]
+    if triple:
+        print("triple of %s " % triple[0])
+        counts[triple[0]] -= 3
+        score += Dice_triple_values[triple[0]]
 
-    score += _functools.reduce(add, dice_to_eval, 0)
+    scores = [v * Dice_single_values[k] for k, v in counts.items()]
+    print(scores)
+    score += _functools.reduce(add, scores, 0)
 
     return score
 
-
-def __count_dice(dice):
-    uniques = set(dice)
-    triple = [d for d in uniques if dice.count(d) >= 3]
-    if triple:
-        return triple[0]
-    return None
 
 class AboutScoringProject(Koan):
     def test_score_of_an_empty_list_is_zero(self):

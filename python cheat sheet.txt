@@ -24,6 +24,7 @@ functional:
 		_functools.reduce(add, dice_to_eval, 0)
 
 dict comprehension: { k.upper(): weapon for k, weapon in dict_of_weapons.items() if weapon}
+	count dice:  {dice.count(d):d for d in (dice)}
 
 Iterators:
 
@@ -35,6 +36,7 @@ basic example:
 Generators:
 
 A generator IS an iterator!
+	They use the 'yield' keyword.
 	Learn more about when to use them.
 
 Lambdas:
