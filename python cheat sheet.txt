@@ -1,0 +1,49 @@
+ranges: range(2,5) = ruby (2...5)
+		range(3) = ruby (0...3)
+
+Data structures:
+	list: [1, 2, 3]
+	tuple: (1, 2, 3,)
+	set: {1, 2, 3}
+	dict: {1: 'one', 2: 'two', 3: 'three'}
+	
+dict:
+	items() - 
+
+functional:
+	MAP:
+		comprehension = [delicacy.capitalize() for delicacy in feast]
+		
+	FILTER:
+		comprehension = [delicacy for delicacy in feast if len(delicacy) > 6] #using list comprehension
+		filter(is_even, seq) #using filter function
+		
+	REDUCE:
+		import _functools
+		from operator import add
+		_functools.reduce(add, dice_to_eval, 0)
+
+dict comprehension: { k.upper(): weapon for k, weapon in dict_of_weapons.items() if weapon}
+
+Iterators:
+
+basic example:
+	it = iter(range(1,6))
+	x = next(it)
+	
+
+Generators:
+
+A generator IS an iterator!
+	Learn more about when to use them.
+
+Lambdas:
+
+basic example:
+	add_one = lambda n: n + 1
+	self.assertEqual(11, add_one(10))
+	
+	def make_order(self, order):
+		return lambda qty: str(qty) + " " + order + "s"
+		
+	self.assertEqual('39823 spams', self.make_order('spam')(39823))
