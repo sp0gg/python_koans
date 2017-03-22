@@ -40,11 +40,12 @@ Dice_triple_values = {1: 1000, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600}
 
 def score(dice):
     # You need to write this method
+    print("DICE: %s" % dice)
     score = 0
 
-    counts = {dice.count(d): d for d in dice}
+    counts = {d: dice.count(d) for d in dice}
     print(counts)
-    triple = [d for d in counts if d <= 3]
+    triple = [d for d in counts if d >= 3]
     print(triple)
 
     if triple:
