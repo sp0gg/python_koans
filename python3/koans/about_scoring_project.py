@@ -40,21 +40,16 @@ Dice_triple_values = {1: 1000, 2: 200, 3: 300, 4: 400, 5: 500, 6: 600}
 
 def score(dice):
     # You need to write this method
-    print("DICE: %s" % dice)
     score = 0
 
     counts = {d: dice.count(d) for d in dice}
-    print(counts)
-    triple = [d for d in counts if d >= 3]
-    print(triple)
+    triple = [k for k, v in counts.items() if v >= 3]
 
     if triple:
-        print("triple of %s " % triple[0])
         counts[triple[0]] -= 3
         score += Dice_triple_values[triple[0]]
 
     scores = [v * Dice_single_values[k] for k, v in counts.items()]
-    print(scores)
     score += _functools.reduce(add, scores, 0)
 
     return score
