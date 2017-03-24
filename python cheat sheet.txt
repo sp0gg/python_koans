@@ -50,3 +50,5 @@ basic example:
 		return lambda qty: str(qty) + " " + order + "s"
 		
 	self.assertEqual('39823 spams', self.make_order('spam')(39823))
+	
+
