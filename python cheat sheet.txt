@@ -6,6 +6,9 @@ Data structures:
 	tuple: (1, 2, 3,)
 	set: {1, 2, 3}
 	dict: {1: 'one', 2: 'two', 3: 'three'}
+
+for each:
+    for x in range(1, n+1):
 	
 dict:
 	items() - 
